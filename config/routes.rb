@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'sessions/new'
+  get "auth/github/callback", to: 'oauth_callbacks#github'
 
-  # Defines the root path route ("/")
   root to: redirect("welcome.html")
 end
