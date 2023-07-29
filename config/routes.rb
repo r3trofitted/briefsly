@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :sessions, only: :new
-
-  root to: 'sessions#new'
+  resource :session, only: [:new, :destroy]
 
   get "auth/github/callback", to: 'oauth_callbacks#github'
 
@@ -17,4 +15,7 @@ Rails.application.routes.draw do
     resource :schedule, only: :show
     resource :profile, only: [:edit, :update]
   end
+  
+
+  root to: 'my/schedules#show'
 end

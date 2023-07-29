@@ -1,12 +1,10 @@
 class SlotsController < ApplicationController
-  before_action :authenticate_user!
-
   def index
     @slots = Slot.search(search_params)
   end
 
   def create
-    @slot = current_user.slots.build(slot_params)
+    @slot = Current.user.slots.build(slot_params)
 
     if @slot.save
       redirect_back_or_to root_path

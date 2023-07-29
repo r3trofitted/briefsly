@@ -1,4 +1,6 @@
 class OAuthCallbacksController < ApplicationController
+  skip_authentication!
+  
   def github
     user = User.from_omniauth request.env['omniauth.auth']
     
