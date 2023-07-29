@@ -1,0 +1,11 @@
+bulma:
+  name: Bulma
+  email: bulma@briefsly.example.com
+  github_uid: 123
+  github_access_token: abcdefg
+
+trunks:
+  name: Trunks
+  email: trunks@briefsly.example.com
+  github_uid: 456
+  github_access_token: hijklmn
