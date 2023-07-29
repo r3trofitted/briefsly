@@ -1,0 +1,7 @@
+<h1>My GitHub repositories</h1>
+
+<ul>
+  <% @repositories.each do |repo| %>
+    <li><%= repo.full_name %></li>
+  <% end %>
+</ul>
