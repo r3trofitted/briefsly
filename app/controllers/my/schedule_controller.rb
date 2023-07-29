@@ -1,4 +1,4 @@
-class My::SchedulesController < ApplicationController
+class My::ScheduleController < ApplicationController
   def show
     @schedule = Schedule.new(Current.user)
   end

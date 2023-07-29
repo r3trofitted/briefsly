@@ -12,10 +12,10 @@ Rails.application.routes.draw do
   end
 
   namespace :my do
-    resource :schedule, only: :show
-    resource :profile, only: [:edit, :update]
+    resource :schedule, only: :show, controller: "schedule"
+    resource :profile, only: [:edit, :update], controller: "profile"
   end
   
 
-  root to: 'my/schedules#show'
+  root to: 'sessions#new'
 end
