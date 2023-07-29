@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :slots, dependent: :destroy
 
   has_many :hosting_jams, through: :slots, class_name: "Jam", source: :jam
-  has_many :guesting_jams, as: :guest, class_name: "Jam"
+  has_many :guesting_jams, foreign_key: :guest_id, class_name: "Jam"
 
   validates :github_uid, uniqueness: true # presence is not mandatory to allow non-GH fixtures)
 
