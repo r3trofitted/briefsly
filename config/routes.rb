@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :issues, only: [:index, :show]
   end
 
-  resources :slots, only: [:create]
+  resources :slots, only: [:index, :create]
 end
