@@ -1,1 +1,60 @@
+@import url("base.css");
+
 /* Application styles */
+
+header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+  align-content: center;
+  
+  margin: 0 0 2em;
+  padding: 0em 3em 0;
+  
+  border-bottom: 2px solid var(--clr-neutral-800);
+  background-color: var(--clr-neutral-400);
+}
+
+header:before {
+  content: '';
+  
+  background-size: auto var(--fs-700);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-image: url("title.png");
+}
+
+.header-nav {
+  list-style: none;
+  padding-inline-start: 0;
+  text-align: end;
+  
+  display: flex;
+  justify-content: start;
+  gap: 1em;
+}
+
+main {
+  display: grid;
+  justify-items: center;
+  
+  width: 80%;
+  margin: 0 auto;
+  
+  color: var(--clr-neutral-400);
+}
+
+/*
+#me {
+  border: 2px solid var(--clr-neutral-800);
+  border-radius: .75em;
+  padding: 2em;
+
+  background-color: var(--clr-neutral-100);
+}
+
+#me label {
+  display: block;
+  font-family: var(--ff-heading);
+}
+*/
