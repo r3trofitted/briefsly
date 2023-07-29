@@ -1,0 +1,9 @@
+<h1><%= @issue.title %></h1>
+
+<div id="new_slot">
+  <%= render "slots/form", slot: @slot %>
+</div>
+
+<%= turbo_frame_tag "slots", src: slots_path(repository: params[:repository_name], issue_number: params[:id]) do %>
+  Loading...
+<% end %>
