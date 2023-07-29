@@ -2,26 +2,24 @@
 
 /* Application styles */
 
-header {
+header nav {
   display: grid;
   grid-template-columns: 1fr auto;
-  justify-content: space-between;
+  justify-items: start;
   align-content: center;
   
+  position: relative;
   margin: 0 0 2em;
-  padding: 0em 3em 0;
+  padding: 2px 3em;
   
   border-bottom: 2px solid var(--clr-neutral-800);
   background-color: var(--clr-neutral-400);
 }
 
-header:before {
-  content: '';
-  
-  background-size: auto var(--fs-700);
-  background-position: left;
-  background-repeat: no-repeat;
-  background-image: url("title.png");
+.title-logo {
+  display: flex;
+  flex-flow: column;
+  justify-content: end;
 }
 
 .header-nav {
@@ -29,9 +27,21 @@ header:before {
   padding-inline-start: 0;
   text-align: end;
   
+  justify-self: end;
+  
   display: flex;
   justify-content: start;
   gap: 1em;
+}
+
+header a {
+  color: var(--clr-neutral-800);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header a:hover {
+  color: var(--clr-primary-600);
 }
 
 main {
@@ -43,7 +53,6 @@ main {
   
   color: var(--clr-neutral-400);
 }
-
 
 .slot {
   border: 2px solid var(--clr-neutral-800);

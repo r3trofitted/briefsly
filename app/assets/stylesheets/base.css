@@ -6,6 +6,8 @@
   --clr-neutral-800: hsl(37 26% 23%);
   
   --clr-primary-400: hsl(184 59% 54%);
+  --clr-primary-600: hsl(186 79% 42%);
+  --clr-primary-800: hsl(186 79% 20%);
   
   --clr-secondary-200: hsl(49 71% 92%);
   --clr-secondary-400: hsl(49 81% 88%);
@@ -18,7 +20,6 @@
 
   /* System font stacks courtesy of https://modernfontstacks.com */
   --ff-body: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
-  
   --ff-heading: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
 }
 

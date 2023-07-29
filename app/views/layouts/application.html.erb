@@ -12,8 +12,10 @@
 
   <body>
     <header>
-      <h1 class="sr-only">Briefsly</h1>
       <nav>
+        <%= link_to root_path, class: "title-logo" do %>
+          <%= image_tag("title.png", size: "139x47") %>
+        <% end %>
         <ul class="header-nav">
           <li>
             <%= link_to "Issues", repositories_url %>
@@ -22,6 +24,9 @@
             <%= link_to "Search", slots_url %>
           </li>
           <li>Schedule</li>
+          <li>
+            <%= link_to "Sign out", session_path, data: { turbo_method: :delete } %>
+          </li>
         </ul>
       </nav>
     </header>
