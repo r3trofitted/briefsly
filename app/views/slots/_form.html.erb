@@ -1,0 +1,20 @@
+<%= form_with model: slot do |f| %>
+  <% if slot.errors.any? %>
+    <div><%= slot.errors.full_messages.to_sentence %></div>
+  <% end %>
+
+  <%= f.hidden_field :repository, value: slot.repository %>
+  <%= f.hidden_field :issue_number, value: slot.issue_number %>
+
+  <div>
+    <%= f.label :start_at %>
+    <%= f.datetime_local_field :start_at %>
+  </div>
+
+  <div>
+    <%= f.label :end_at %>
+    <%= f.datetime_local_field :end_at %>
+  </div>
+
+  <%= f.submit "Save" %>
+<% end %>

@@ -6,6 +6,7 @@ class IssuesController < ApplicationController
 
   def show
     @issue = github_client.issue(repository_name, params[:id])
+    @slot = Slot.new(repository: repository_name, issue_number: params[:id])
   end
 
   private

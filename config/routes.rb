@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :repositories, only: [:index, :show], param: :name do
     resources :issues, only: [:index, :show]
   end
+
+  resources :slots, only: [:create]
 end
