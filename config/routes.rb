@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'sessions#new'
 
-  resources :repositories, only: [:index]
+  resources :repositories, only: [:index, :show], param: :name do
+    resources :issues, only: [:index]
+  end
 end

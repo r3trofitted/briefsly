@@ -1,7 +1,14 @@
 <h1>Repositories</h1>
 
+<%= form_with url: repositories_path, method: :get do |f| %>
+  <%= f.text_field :terms, value: @terms %>
+  <%= f.submit %>
+<% end %>
+
 <ul>
   <% @repositories.each do |repo| %>
-    <li><%= repo.full_name %></li>
+    <li>
+      <%= link_to repo.full_name, repository_issues_path(repository_name: repo.full_name) %>
+    </li>
   <% end %>
 </ul>
