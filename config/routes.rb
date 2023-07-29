@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get "auth/github/callback", to: 'oauth_callbacks#github'
 
   root to: 'sessions#new'
+
+  resources :repositories, only: [:index]
 end
