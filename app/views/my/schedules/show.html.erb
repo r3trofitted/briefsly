@@ -1,1 +1,9 @@
-<h1>My schedule</h1>
+<h1>Schedule</h1>
+
+<% if @schedule.empty? %>
+<p>
+  It seems that your schedule is empty! You should <%= link_to "open up slots", repositories_path %> or 
+  <%= link_to "search for pairing buddies", slots_path %>.
+<% else %>
+
+<% end %>
