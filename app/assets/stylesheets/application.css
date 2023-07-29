@@ -1,52 +1,6 @@
+@import url("base.css");
+
 /* Application styles */
-
-/* TODO: dark mode */
-
-:root {
-  --clr-neutral-100: hsl(37 99% 99%);
-  --clr-neutral-400: hsl(37 60% 60%);
-  --clr-neutral-800: hsl(37 26% 23%);
-  
-  --clr-primary-400: hsl(184 59% 54%);
-  
-  --clr-secondary-200: hsl(49 71% 92%);
-  --clr-secondary-400: hsl(49 81% 88%);
-  --clr-secondary-800: hsl(38 62% 47%);
-  
-  --fs-300: 0.75rem;
-  --fs-400: 1rem;
-  --fs-500: 1.333rem;
-  --fs-700: 2.369rem;
-
-  /* System font stacks courtesy of https://modernfontstacks.com */
-  --ff-body: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
-  
-  --ff-heading: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
-}
-
-*,
-:after,
-:before {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box
-}
-
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  background-color: var(--clr-secondary-200);
-  color: var(--clr-neutral-800);
-  font-family: var(--ff-body);
-  font-size: var(--fs-400);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--ff-heading);
-}
 
 header {
   display: grid;
@@ -104,17 +58,3 @@ main {
   font-family: var(--ff-heading);
 }
 */
-/* Utility classes */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap; /* added line */
-  border: 0;
-}
-
-p { color: red; }
