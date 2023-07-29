@@ -1,0 +1,5 @@
+<ul>
+  <% @issues.each do |issue| %>
+    <li>#<%= issue.number %> - <%= issue.title  %></li>
+  <% end %>
+</ul>

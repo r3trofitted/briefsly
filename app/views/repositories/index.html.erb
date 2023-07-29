@@ -5,6 +5,10 @@
   <%= f.submit %>
 <% end %>
 
-<% @repositories.each do |repo| %>
-  <li><%= repo.full_name %></li>
-<% end %>
+<ul>
+  <% @repositories.each do |repo| %>
+    <li>
+      <%= link_to repo.full_name, repository_issues_path(repository_name: repo.full_name) %>
+    </li>
+  <% end %>
+</ul>
