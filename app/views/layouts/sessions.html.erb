@@ -6,22 +6,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "sessions", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <header>
+  <body id="sessions">
+    <header class="welcome">
       <h1 class="sr-only">Briefsly</h1>
-      <nav>
-        <ul class="header-nav">
-          <li>Topics</li>
-          <li>Search</li>
-          <li>Schedule</li>
-        </ul>
-      </nav>
+      <%= image_tag "title.png", size: "278x91" %>
+      <%#= image_tag "logo.png", size: "210x237" %>
+      <p class="tagline sr-only">Timely support for pairs!</p>
     </header>
-    
+
     <%= yield %>
   </body>
 </html>
