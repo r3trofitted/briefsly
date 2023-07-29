@@ -10,5 +10,4 @@ class OAuthCallbacksController < ApplicationController
       # TODO – handle error
     end
   end
-  end
 end
