@@ -1,0 +1,7 @@
+<h1>New jam</h1>
+
+<%= render @slot, join_link: false %>
+
+<%= form_with model: [@slot, @jam] do |f| %>
+  <%= f.submit "Join jam" %>
+<% end %>

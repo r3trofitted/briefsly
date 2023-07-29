@@ -1,5 +1,12 @@
 <h1>Slots</h1>
 
-<%= turbo_frame_tag "slots" do %>
-  <%= render @slots %>
-<% end %>
+<main class="slots-list">
+  <%= form_with url: slots_url, method: :get do |f| %>
+    <%= f.text_field :buddy_name, name: f.field_name(:q, :buddy_name), autocomplete: "off" %>
+    <%= f.submit %>
+  <% end %>
+
+  <%= turbo_frame_tag "slots" do %>
+    <%= render @slots, join_link: true %>
+  <% end %>
+</main>

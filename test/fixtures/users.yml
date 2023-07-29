@@ -3,9 +3,11 @@ bulma:
   email: bulma@briefsly.example.com
   github_uid: 123
   github_access_token: abcdefg
+  github_nickname: bulma_17
 
 trunks:
   name: Trunks
   email: trunks@briefsly.example.com
   github_uid: 456
   github_access_token: hijklmn
+  github_nickname: timetraveller

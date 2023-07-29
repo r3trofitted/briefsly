@@ -1,15 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  user: one
+bulma_on_rails:
+  user: bulma
   start_at: 2023-07-29 15:27:14
   end_at: 2023-07-29 15:27:14
-  repository: MyString
-  issue_number: 1
+  repository: rails/rails
+  issue_number: 48849
 
-two:
-  user: two
+trunks_on_minitest:
+  user: trunks
   start_at: 2023-07-29 15:27:14
   end_at: 2023-07-29 15:27:14
-  repository: MyString
-  issue_number: 1
+  repository: minitest
+  issue_number: 2

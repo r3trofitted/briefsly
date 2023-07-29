@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   def authenticate_user!
     unless user_signed_in?
-      redirect_to sessions_new_path, notice: "You must sign in to access this page."
+      redirect_to new_session_path, notice: "You must sign in to access this page."
     end
   end
 

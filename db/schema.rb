@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_29_132714) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_29_160301) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "jams", force: :cascade do |t|
+    t.bigint "slot_id", null: false
+    t.bigint "guest_id", null: false
+    t.datetime "start_at", null: false
+    t.datetime "end_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guest_id"], name: "index_jams_on_guest_id"
+    t.index ["slot_id"], name: "index_jams_on_slot_id"
+  end
 
   create_table "slots", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -26,13 +37,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_29_132714) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "github_uid"
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "github_uid", null: false
     t.string "github_access_token"
+    t.string "github_nickname", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "experience", default: 1, null: false
   end
 
+  add_foreign_key "jams", "slots"
+  add_foreign_key "jams", "users", column: "guest_id"
   add_foreign_key "slots", "users"
 end

@@ -44,6 +44,11 @@ main {
   color: var(--clr-neutral-400);
 }
 
+
+.slot {
+  border: 2px solid var(--clr-neutral-800);
+}
+
 /*
 #me {
   border: 2px solid var(--clr-neutral-800);
