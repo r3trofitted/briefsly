@@ -4,7 +4,5 @@ Rails.application.routes.draw do
 
   root to: redirect("welcome.html")
 
-  namespace :github do
-    resources :repositories, only: [:index]
-  end
+  resources :repositories, only: [:index]
 end
