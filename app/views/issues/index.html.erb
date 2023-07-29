@@ -1,5 +1,12 @@
 <ul>
   <% @issues.each do |issue| %>
-    <li>#<%= issue.number %> - <%= issue.title  %></li>
+    <li>
+      #<%= issue.number %> -
+      <%= link_to issue.title,
+                  repository_issue_path(
+                    repository_name: params[:repository_name],
+                    id: issue.number
+                  )  %>
+    </li>
   <% end %>
 </ul>
