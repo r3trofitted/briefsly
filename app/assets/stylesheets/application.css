@@ -34,13 +34,17 @@ header nav {
   gap: 1em;
 }
 
-header a {
-  color: var(--clr-neutral-800);
-  text-decoration: none;
+.header-nav li {
   font-weight: bold;
+  color: var(--clr-secondary-400);
 }
 
-header a:hover {
+.header-nav a {
+  color: var(--clr-neutral-800);
+  text-decoration: none;
+}
+
+.header-nav a:hover {
   color: var(--clr-primary-600);
 }
 
