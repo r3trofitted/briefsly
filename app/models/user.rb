@@ -6,6 +6,9 @@ class User < ApplicationRecord
   has_many :guesting_jams, foreign_key: :guest_id, class_name: "Jam"
   
   enum :experience_level, [:apprentice, :journeyman, :master, :matz]
+  
+  # Auth token for the browser extension
+  has_secure_token :ext_auth_token, length: 36
 
   validates :github_uid, uniqueness: true # presence is not mandatory to allow non-GH fixtures)
 

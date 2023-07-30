@@ -5,6 +5,7 @@ calvin:
   github_access_token: abcdefg
   github_nickname: calvin_klein
   experience_level: 0
+  ext_auth_token: MTRdq5fwDTjahZoKNCxtPBmYBTwxhrwV8w9o
 
 celio:
   name: Lio C.
@@ -13,6 +14,7 @@ celio:
   github_access_token: hijklmn
   github_nickname: celio
   experience_level: 3
+  ext_auth_token: S1zRdYZ6K5PnKdf22ssjjWFVstvYhV95TLta
 
 tam_tam:
   name: Princesse Tam Tam
@@ -20,3 +22,5 @@ tam_tam:
   github_uid: 57028 # RLD
   github_access_token: opqrstu
   github_nickname: tam_tam_princess
+  ext_auth_token: 8c1fZB3PE4K4JWCvyUx73S1gANAizPBYksZm
+
