@@ -1,0 +1,12 @@
+.slots-search {
+  display: flex;
+  gap: 2rem;
+}
+
+.slots-search__filters {
+  flex: 1 1 20rem;
+}
+
+.slots-search__results {
+  flex: 999 999 0;
+}

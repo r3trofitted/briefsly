@@ -1,0 +1,17 @@
+.form-field {
+  margin-bottom: 1rem;
+}
+
+.form-field__label {
+  font-size: var(--font-size-s);
+  margin-bottom: 0.25rem;
+}
+
+.form-field__input {
+  background-color: transparent;
+  width: 100%;
+  max-width: 100%;
+  border: solid 2px var(--color-text-header);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--border-radius);
+}

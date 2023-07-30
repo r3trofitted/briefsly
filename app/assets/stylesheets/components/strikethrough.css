@@ -1,0 +1,16 @@
+.strikethrough {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--font-size-s);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.strikethrough::before,
+.strikethrough::after {
+  height: 0;
+  flex: 1;
+  content: "";
+  border-bottom: solid 1px var(--color-border)
+}

@@ -1,37 +1,54 @@
-<main id="look-for-a-jam" class="resource">
+<main class="container">
   <h1>Look for a jam</h1>
-  <p>
-    Search among the open slots, and once you've found an issue which inspires you, start a jam!
-  </p>
-  
-  <%= form_with url: slots_url, model: @search, scope: :q, method: :get do |f| %>
-    <fieldset>
-      <%= f.label :buddy_name, "I want to pair with:" %>
-      <%= f.text_field :buddy_name, autocomplete: "off" %>
-    </fieldset>
-    
-    <fieldset>
-      <%= f.label :repository_name, "I want to pair on: " %>
-      <%= f.text_field :repository_name, autocomplete: "off" %>
-    </fieldset>
-    
-    <fieldset>
-      <%= f.label :relative_experience, "I want to pair with someone: " %>
-      <%= f.select :relative_experience, [:less_experienced, :as_experienced, :more_experienced], include_blank: true %>
-    </fieldset>
-    
-    <ul>
-      <li>[TODO: filter by time period]</li>
-    </ul>
-    
-    <%= link_to "Reset", url_for %>
-    <%= f.submit "Search" %>
-    
-  <% end %>
-  
-  <br><br>
 
-  <%= turbo_frame_tag "slots" do %>
-    <%= render collection: @search.slots, partial: "slot_card", as: "slot" %>
-  <% end %>
+  <p>
+    Search among the open slots, and once you've found an issue which
+    inspires you, start a jam!
+  </p>
+
+  <div class="slots-search">
+    <div class="slots-search__filters">
+      <div class="slot-filters card">
+        <%= form_with url: slots_url, model: @search, scope: :q, method: :get do |f| %>
+          <fieldset class="form-field">
+            <%= f.label :buddy_name, "I want to pair with:", class: "form-field__label" %>
+            <%= f.text_field :buddy_name,
+                            autocomplete: "off",
+                            class: "form-field__input",
+                            placeholder: "tenderlove" %>
+          </fieldset>
+
+          <fieldset class="form-field">
+            <%= f.label :repository_name, "I want to pair on:", class: "form-field__label" %>
+            <%= f.text_field :repository_name,
+                            autocomplete: "off",
+                            class: "form-field__input",
+                            placeholder: "rails/rails" %>
+          </fieldset>
+
+          <fieldset class="form-field">
+            <%= f.label :relative_experience, "I want to pair with someone:", class: "form-field__label" %>
+            <%= f.select :relative_experience,
+                        [:less_experienced, :as_experienced, :more_experienced],
+                        include_blank: true,
+                        class: "form-field__input" %>
+          </fieldset>
+
+          <%= f.submit "Search", class: "button button--full button--solid" %>
+
+          <span class="strikethrough slot-filters__strikethrough">Or</span>
+
+          <div class="slot-filters__reset-wrapper">
+            <%= link_to "Reset filters", url_for, class: "slot-filters__reset" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <%= turbo_frame_tag "slots", class: "slots-search__results" do %>
+      <div class="card">
+        <%= render collection: @search.slots, partial: "slot_card", as: "slot" %>
+      </div>
+    <% end %>
+  </div>
 </main>

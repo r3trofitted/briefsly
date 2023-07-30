@@ -1,0 +1,13 @@
+.slot-filters__strikethrough {
+  margin: 1rem 0;
+}
+
+.slot-filters__reset-wrapper {
+  text-align: center;
+}
+
+.slot-filters__reset {
+  font-size: var(--font-size-s);
+  color: var(--color-text-muted);
+  text-decoration: none;
+}

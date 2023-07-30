@@ -7,8 +7,23 @@
   color: var(--color-text-header);
   border-radius: var(--border-radius);
   transition: 100ms ease-out;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .button:hover {
   background-color: var(--color-surface-dark);
+}
+
+.button--solid {
+  background-color: var(--color-text-header);
+  color: var(--color-white);
+}
+
+.button--solid:hover {
+  background-color: var(--color-text-body);
+}
+
+.button--full {
+  width: 100%;
 }
