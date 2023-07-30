@@ -4,13 +4,15 @@ calvin:
   github_uid: 123
   github_access_token: abcdefg
   github_nickname: calvin_klein
+  experience_level: 0
 
 celio:
   name: Lio C.
   email: c_lio@briefsly.example.com
   github_uid: 456
   github_access_token: hijklmn
-  github_nickname: celiotr
+  github_nickname: celio
+  experience_level: 3
 
 tam_tam:
   name: Princesse Tam Tam

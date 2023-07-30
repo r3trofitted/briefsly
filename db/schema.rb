@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_30_080246) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_30_092948) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_30_080246) do
     t.datetime "end_at", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0, null: false
     t.index ["guest_id"], name: "index_jams_on_guest_id"
     t.index ["slot_id"], name: "index_jams_on_slot_id"
   end
@@ -46,6 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_30_080246) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "experience", default: 1, null: false
+    t.integer "experience_level"
   end
 
   add_foreign_key "jams", "slots"
