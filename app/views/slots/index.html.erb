@@ -15,8 +15,12 @@
       <%= f.text_field :repository_name, autocomplete: "off" %>
     </fieldset>
     
+    <fieldset>
+      <%= f.label :relative_experience, "I want to pair with someone: " %>
+      <%= f.select :relative_experience, [:less_experienced, :as_experienced, :more_experienced], include_blank: true %>
+    </fieldset>
+    
     <ul>
-      <li>[TODO: filter by desired mentoring relationship]</li>
       <li>[TODO: filter by time period]</li>
     </ul>
     
