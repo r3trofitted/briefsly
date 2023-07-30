@@ -1,12 +1,15 @@
-<h1>Slots</h1>
+<main id="look-for-a-jam" class="resource">
+  <h1>Look for a jam</h1>
+  <p>
+    Search among the open slots, and once you've found an issue which inspires you, start a jam!
+  </p>
 
-<main class="slots-list">
   <%= form_with url: slots_url, method: :get do |f| %>
     <%= f.text_field :buddy_name, name: f.field_name(:q, :buddy_name), autocomplete: "off" %>
     <%= f.submit %>
   <% end %>
 
   <%= turbo_frame_tag "slots" do %>
-    <%= render @slots, join_link: true %>
+    <%= render collection: @slots, partial: "slot_card", as: "slot" %>
   <% end %>
 </main>

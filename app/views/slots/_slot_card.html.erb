@@ -1,0 +1,4 @@
+<div class="card">
+  <%= render slot %>
+  <%= link_to "Join", new_slot_jam_path(slot_id: slot.id), data: { turbo_frame: "_top" } %>
+</div>

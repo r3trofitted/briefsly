@@ -1,5 +1,3 @@
-<%# locals: (join_link:) -%>
-
 <article class="slot">
   <dl>
     <dt>Project</dt>
@@ -9,9 +7,4 @@
     <dt>Time slot</dt>
     <dd><%= slot.time_slot %></dd>
   </dl>
-
-
-  <% if join_link %>
-    <%= link_to "Join", new_slot_jam_path(slot_id: slot.id), data: { turbo_frame: "_top" } %>
-  <% end %>
 </article>

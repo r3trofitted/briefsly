@@ -48,7 +48,7 @@ header nav {
   color: var(--clr-primary-600);
 }
 
-main {
+main.resource {
   display: grid;
   justify-items: center;
   
@@ -58,8 +58,43 @@ main {
   color: var(--clr-neutral-400);
 }
 
-.slot {
+main.resource h1 {
+  justify-self: center;
+  grid-column: 1 / -1;
+}
+
+
+section.form-step h2 {
+  text-align: left;
+}
+
+
+/* Slots */
+
+main#open-a-slot {
+  grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+}
+
+main.resource.slot {
   border: 2px solid var(--clr-neutral-800);
+}
+
+/* Jams */
+main#look-for-a-jam {
+  
+}
+
+#slots {
+  display: grid;
+  justify-self: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1em;
+}
+
+.card {
+  border: 1px solid var(--clr-neutral-800);
+  border-radius: 0.5em;
+  padding: 1em;
 }
 
 /*

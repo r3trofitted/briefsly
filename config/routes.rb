@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :issues, only: [:index, :show]
   end
 
-  resources :slots, only: [:index, :create] do
+  resources :slots, only: [:index, :new, :create] do
     resources :jams, only: [:new, :create]
   end
 
@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     resource :schedule, only: :show, controller: "schedule"
     resource :profile, only: [:edit, :update], controller: "profile"
   end
-  
 
   root to: 'sessions#new'
 end
