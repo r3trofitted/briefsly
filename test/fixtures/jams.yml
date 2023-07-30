@@ -1,0 +1,6 @@
+celio_inviting_calvin_on_rails:
+  slot: calvin_on_rails
+  guest: celio
+  status: <%= Jam.statuses[:suggested] %>
+  start_at: 2023-07-29 15:27:14
+  end_at: 2023-07-29 15:27:14

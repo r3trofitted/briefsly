@@ -1,8 +1,10 @@
 <main id="my-schedule" class="resource">
   <h1>Schedule</h1>
-  <p>
-    [TODO: Notify of jams pending acceptation]
-  </p>
+  <% if @schedule.hosting_jams.suggested.any? %>
+    <p>
+      You've been invited to jams!
+    </p>
+  <% end %>
 
   <% if @schedule.empty? %>
   <p>

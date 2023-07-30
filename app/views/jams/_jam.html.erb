@@ -1,3 +1,9 @@
 <article class="jam">
   <%= render jam.slot %>
+  
+  <% if jam.suggested? %>
+    <%# TODO: use RESTful resouces instead for acceptance/decline of jams %>
+    <%= button_to "Decline the jam", decline_jam_path(jam) %>
+    <%= button_to "Accept the jam", accept_jam_path(jam) %>
+  <% end %>
 </article>

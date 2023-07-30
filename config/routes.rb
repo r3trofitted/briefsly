@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   end
 
   resources :slots, only: [:index, :new, :create] do
-    resources :jams, only: [:new, :create]
+    resources :jams, only: [:new, :create], shallow: true do
+      member do
+        post "accept"
+        post "decline"
+      end
+    end
   end
 
   scope "/my" do

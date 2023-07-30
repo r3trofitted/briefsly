@@ -1,6 +1,8 @@
 class Jam < ApplicationRecord
   belongs_to :slot
   belongs_to :guest, class_name: "User"
+  
+  enum :status, [:suggested, :accepted, :declined], default: :suggested
 
   before_validation :set_start_at, :set_end_at
   
