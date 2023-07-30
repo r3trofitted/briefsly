@@ -1,0 +1,26 @@
+<main class="container">
+  <div class="hero">
+    <h1 class="hero__title">
+      Find a pair-programming buddy in the
+      <span class="hero__title-highlight">Ruby on Rails community</span>
+    </h1>
+    <p class="hero__tagline">
+      Briefsly allows you to contribute to open-source by scheduling pair-programming
+      sessions on a specific issue on a Ruby gem you would like to contribute to.
+    </p>
+  </div>
+
+  <div class="features-grid">
+    <% 3.times do %>
+      <div class="feature">
+        <%= image_tag "placeholder.png", class: "feature__image", alt: "" %>
+        <div class="feature__text">
+          <%= link_to "Feature 1 screenshot", "#", class: "feature__link" %>
+          <p class="feature__description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>
