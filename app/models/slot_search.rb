@@ -18,7 +18,7 @@ class SlotSearch
   end
   
   def slots
-    slots = Slot.includes(:user).all
+    slots = Slot.includes(:user).where.not(user: Current.user)
 
     slots = slots.by_repository(repository_name) if repository_name.present?
     slots = slots.by_issue(issue_number) if issue_number.present?
