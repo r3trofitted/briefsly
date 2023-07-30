@@ -1,13 +1,20 @@
-bulma:
-  name: Bulma
-  email: bulma@briefsly.example.com
+calvin:
+  name: Calvin Klein
+  email: ck@briefsly.example.com
   github_uid: 123
   github_access_token: abcdefg
-  github_nickname: bulma_17
+  github_nickname: calvin_klein
 
-trunks:
-  name: Trunks
-  email: trunks@briefsly.example.com
+celio:
+  name: Lio C.
+  email: c_lio@briefsly.example.com
   github_uid: 456
   github_access_token: hijklmn
-  github_nickname: timetraveller
+  github_nickname: celiotr
+
+tam_tam:
+  name: Princesse Tam Tam
+  email: tam_tam@briefsly.example.com
+  github_uid: 57028 # RLD
+  github_access_token: opqrstu
+  github_nickname: tam_tam_princess

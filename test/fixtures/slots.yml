@@ -1,13 +1,14 @@
-bulma_on_rails:
-  user: bulma
+calvin_on_rails:
+  user: calvin
   start_at: 2023-07-29 15:27:14
   end_at: 2023-07-29 15:27:14
   repository: rails/rails
   issue_number: 48849
 
-trunks_on_minitest:
-  user: trunks
+celio_on_minitest:
+  user: celio
   start_at: 2023-07-29 15:27:14
   end_at: 2023-07-29 15:27:14
-  repository: minitest
-  issue_number: 2
+  repository: seattlerb/minitest
+  issue_number: 947
+

@@ -59,8 +59,9 @@ button.gh-sign_in {
   padding-left: calc(2 * var(--btn-padding) + var(--fs-500)); /* making room for the logo */
   
   color: var(--clr-neutral-100);
-  font-size: var(--fs-300);
+  font-size: var(--fs-400);
   font-weight: bold;
+  cursor: pointer;
   
   background-color: var(--clr-primary-400);
   background-position: var(--btn-padding);
