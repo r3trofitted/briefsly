@@ -3,17 +3,24 @@
   <p>
     Search among the open slots, and once you've found an issue which inspires you, start a jam!
   </p>
-
-  <%= form_with url: slots_url, method: :get do |f| %>
-    <%= f.label :buddy_name, "I want to pair with:" %>
-    <%= f.text_field :buddy_name, name: f.field_name(:q, :buddy_name), autocomplete: "off" %>
-    [TODO: autocomplete?]
+  
+  <%= form_with url: slots_url, model: @search, scope: :q, method: :get do |f| %>
+    <fieldset>
+      <%= f.label :buddy_name, "I want to pair with:" %>
+      <%= f.text_field :buddy_name, autocomplete: "off" %>
+    </fieldset>
+    
+    <fieldset>
+      <%= f.label :repository_name, "I want to pair on: " %>
+      <%= f.text_field :repository_name, autocomplete: "off" %>
+    </fieldset>
+    
     <ul>
-      <li>[TODO: filter by projet]</li>
       <li>[TODO: filter by desired mentoring relationship]</li>
       <li>[TODO: filter by time period]</li>
-      <li>[TODO: reset filters]</li>
     </ul>
+    
+    <%= link_to "Reset", url_for %>
     <%= f.submit "Search" %>
     
   <% end %>
@@ -21,6 +28,6 @@
   <br><br>
 
   <%= turbo_frame_tag "slots" do %>
-    <%= render collection: @slots, partial: "slot_card", as: "slot" %>
+    <%= render collection: @search.slots, partial: "slot_card", as: "slot" %>
   <% end %>
 </main>
