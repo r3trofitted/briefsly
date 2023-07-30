@@ -2,6 +2,8 @@
 
 <%= render @slot %>
 
-<%= form_with model: [@slot, @jam] do |f| %>
-  <%= f.submit "Join jam" %>
+<%= turbo_frame_tag @slot, Jam.new do %>
+  <%= form_with model: [@slot, @jam] do |f| %>
+    <%= f.submit "Join jam" %>
+  <% end %>
 <% end %>

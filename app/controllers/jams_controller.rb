@@ -8,7 +8,7 @@ class JamsController < ApplicationController
   def create
     @slot.create_jam!(guest: Current.user)
 
-    redirect_to schedule_path
+    redirect_to schedule_path, status: :see_other
   end
 
   private
