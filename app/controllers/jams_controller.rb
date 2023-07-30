@@ -8,7 +8,7 @@ class JamsController < ApplicationController
   def create
     @slot.create_jam!(guest: Current.user)
 
-    redirect_to my_schedule_path
+    redirect_to schedule_path
   end
 
   private

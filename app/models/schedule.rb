@@ -7,6 +7,10 @@ class Schedule
   end
   
   def empty?
-    slots.none? && hosting_jams.none? && guesting_jams.none?
+    slots.none? && jams.none?
+  end
+  
+  def jams
+    hosting_jams.to_a.concat guesting_jams
   end
 end

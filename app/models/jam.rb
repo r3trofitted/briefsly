@@ -3,6 +3,8 @@ class Jam < ApplicationRecord
   belongs_to :guest, class_name: "User"
 
   before_validation :set_start_at, :set_end_at
+  
+  delegate :project_name, to: :slot
 
   private
 

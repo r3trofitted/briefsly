@@ -16,11 +16,13 @@ class Slot < ApplicationRecord
     slots = slots.by_issue(params[:issue_number]) if params.has_key?(:issue_number)
     slots = slots.references(:user).merge(User.by_buddyname(params[:buddy_name])) if params.has_key?(:buddy_name)
 
+    slots.limit(48)
+    
     slots
   end
 
   def project_name
-    repository # SLIME
+    "%s #%d" % [repository, issue_number]
   end
 
   def buddy_name

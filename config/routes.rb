@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :jams, only: [:new, :create]
   end
 
-  namespace :my do
+  scope "/my" do
     resource :schedule, only: :show, controller: "schedule"
     resource :profile, only: [:edit, :update], controller: "profile"
   end

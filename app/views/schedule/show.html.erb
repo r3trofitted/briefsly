@@ -1,0 +1,28 @@
+<main id="my-schedule" class="resource">
+  <h1>Schedule</h1>
+  <p>
+    [TODO: Notify of jams pending acceptation]
+  </p>
+
+  <% if @schedule.empty? %>
+  <p>
+    It seems that your schedule is empty! You should <%= link_to "open up slots", repositories_path %> or 
+    <%= link_to "search for pairing buddies", slots_path %>.
+  <% else %>
+    <section id="my-schedule-slots">
+      <h2>Slots</h2>
+      <% if @schedule.slots.any?%>
+        <%= render @schedule.slots %>
+      <% else %>
+        <p>
+          You have no open slot! You should <%= link_to "open one", new_slot_path %>!
+        </p>
+      <% end %>
+    </section>
+    
+    <section id="my-schedule-jams">
+      <h2>Jams</h2>
+      <%= render @schedule.jams %>
+    </section>
+  <% end %>
+</main>
