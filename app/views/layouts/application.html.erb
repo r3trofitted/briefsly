@@ -8,39 +8,16 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link rel="stylesheet" href="https://ga.jspm.io/npm:flatpickr@4.6.9/dist/flatpickr.min.css">
-    
+
     <%= javascript_importmap_tags %>
-    
+
     <%= favicon_link_tag %>
     <%= favicon_link_tag "apple-touch-icon.png", rel: "apple-touch-icon", type: "image/png" %>
   </head>
 
   <body>
-    <header>
-      <nav>
-        <%= link_to schedule_path, class: "title-logo" do %>
-          <%= image_tag("title.png", size: "139x47") %>
-        <% end %>
-        <ul class="header-nav">
-          <li>
-            <%= link_to_unless_current "Open a slot", new_slot_path %>
-          </li>
-          <li>
-            <%= link_to_unless_current "Look for a jam", slots_path %>
-          </li>
-          <li>
-            <%= link_to_unless_current "Schedule", schedule_path %>
-          </li>
-          <li>
-            <%= link_to_unless_current "Profile", edit_profile_path %>
-          </li>
-          <li>
-            <%= link_to "Sign out", session_path, data: { turbo_method: :delete } %>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    
+    <%= render "layouts/navbar" %>
+
     <%= yield %>
   </body>
 </html>
