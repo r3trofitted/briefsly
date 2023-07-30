@@ -33,3 +33,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: var(--line-height-header);
   font-weight: bold;
 }
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
