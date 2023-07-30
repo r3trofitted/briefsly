@@ -5,7 +5,10 @@
     </div>
     <div class="text">
       <p class="name"><%= @user.name.presence || @user.login.presence || @user.email.presence %></p>
-      <p class="job_discription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam atque, ipsam a amet laboriosam eligendi.</p>
+      <%= form_with model: Current.user, url: profile_path, method: :put do |f| %>
+        <%= f.collection_radio_buttons :experience_level, User.experience_levels, :last, :first, { checked: User.experience_levels[Current.user.experience_level] } %>
+        <%= f.submit %>
+      <% end %>
     </div>
     <div class="button">
       <div>
