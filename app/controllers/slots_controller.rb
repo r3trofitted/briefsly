@@ -2,6 +2,9 @@ class SlotsController < ApplicationController
   def index
     @search = SlotSearch.new(search_params)
   end
+  
+  def new
+  end
 
   def create
     @slot = Current.user.slots.build(slot_params)

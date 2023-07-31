@@ -1,0 +1,9 @@
+<%= turbo_stream.update "briefsly" do %>
+  <section class="form-step">
+    <p>[slots#new]</p>
+    
+    <%= tag.div data: { controller: "briefsly", briefsly_url_value: slots_url } do |f| %>
+      <button data-action="briefsly#send">Click me!</button>
+    <% end %>
+  </section>
+<% end %>
