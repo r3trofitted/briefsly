@@ -2,6 +2,11 @@ class IssuesController < ApplicationController
 
   def index
     @issues = github_client.issues(repository_name, sort: { updated: :desc })
+    
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   def show
@@ -16,5 +21,6 @@ class IssuesController < ApplicationController
   end
 
   def github_client
+    Current.github_client
   end
 end

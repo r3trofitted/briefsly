@@ -1,0 +1,7 @@
+<div id="available-repositories">
+  <% repositories.each do |repo| %>
+  <div>
+    <%= f.radio_button :repository, repo.full_name, data: { action: "slot-wizard#moveToStep2" } %>
+    <%= f.label :repository, repo.full_name %>
+  </div>
+<% end %>

@@ -1,0 +1,5 @@
+<%= turbo_stream.update "available-repositories" do %>
+  <% fields_for Slot.new do |f| %>
+    <%= render "slots/available_repositories", repositories: @repositories, f: f %>
+  <% end %>
+<% end %>

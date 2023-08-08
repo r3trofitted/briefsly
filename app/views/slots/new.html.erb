@@ -1,18 +1,37 @@
-<main id="open-a-slot" class="resource">
+<main id="open-a-slot" class="resource container">
   <h1>Open a slot</h1>
 
-  <section class="form-step">
-    <h2>First, choose a GitHub repository</h2>
-    <p>[repositories#index]</p>
-  </section>
-
-  <section class="form-step">
-    <h2>Then, choose an issue</h2>
-    <p>[repositories#show]</p>
-  </section>
-
-  <section class="form-step">
-    <h2>Finally, fill in the details of the slot</h2>
-    <p>[slots#new]</p>
-  </section>
+  <%= form_with model: @slot, data: { controller: "slot-wizard" } do |f| %>
+    <fieldset class="form-step card">
+      <legend>First, choose a GitHub repository</legend>
+      <%= search_field_tag "repository", "", spellcheck: false, class: "form-field", data: {
+                                                                  slot_wizard_target: "query",
+                                                                  action: "keydown.enter->slot-wizard#searchRepositories:prevent"
+                                                                } %>
+      <%= button_tag "🔍", type: "button", class: "button", data: { action: "slot-wizard#searchRepositories" } %>
+      <%= render "available_repositories", repositories: available_repositories_for_slot(f.object), f: f %>
+    </fieldset>
+  
+    <fieldset id="slot-form-step2" class="form-step card">
+      <legend>Then, choose an issue</legend>
+      <%= render "available_issues", issues: [], f: f %>
+    </fieldset>
+  
+    <fieldset class="form-step card">
+      <legend>Finally, fill in the details of the slot</legend>
+      <div>
+        <%= f.label :start_at %>
+        <%= f.datetime_local_field :start_at %>
+      </div>
+      
+      <div>
+        <%= f.label :end_at %>
+        <%= f.datetime_local_field :end_at %>
+      </div>
+    </fieldset>
+    
+    <fieldset class="form-step">
+      <%= f.submit %>
+    </fieldset>
+  <% end %>
 </main>
