@@ -16,6 +16,5 @@ class IssuesController < ApplicationController
   end
 
   def github_client
-    Octokit::Client.new(per_page: 20)
   end
 end
