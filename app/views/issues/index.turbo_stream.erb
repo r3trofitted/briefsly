@@ -1,4 +1,4 @@
-<%= turbo_stream.update "available-issues" do %>
+<%= turbo_stream.replace "available-issues" do %>
   <% fields_for Slot.new do |f| %>
     <%= render "slots/available_issues", issues: @issues, f: f %>
   <% end %>

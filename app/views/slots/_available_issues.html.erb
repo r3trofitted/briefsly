@@ -1,8 +1,10 @@
-<div id="available-issues">
+<ul id="available-issues" class="checkable-cards-list">
   <% issues.each do |issue| %>
-  <div class="card">
-    <%= f.radio_button :issue_number, issue.number, data: { action: "slot-wizard#moveToStep3" } %>
-    <%= f.label :issue_number, issue.title %>
-  </div>
+  <li>
+    <%= f.label :issue_number, value: issue.number, class: "checkable-card" do %>
+      <%= f.radio_button :issue_number, issue.number, data: { action: "slot-wizard#moveToStep3" } %>
+      <%= issue.title %>
+    <% end %>
+  </li>
   <% end %>
-</div>
+</ul>

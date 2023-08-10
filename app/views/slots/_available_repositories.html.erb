@@ -1,7 +1,10 @@
-<div id="available-repositories">
+<ul id="available-repositories" class="checkable-cards-list">
   <% repositories.each do |repo| %>
-  <div>
-    <%= f.radio_button :repository, repo.full_name, data: { action: "slot-wizard#moveToStep2" } %>
-    <%= f.label :repository, repo.full_name %>
-  </div>
-<% end %>
+  <li>
+    <%= f.label :repository, value: repo.full_name, class: "checkable-card" do %>
+      <%= f.radio_button :repository, repo.full_name, data: { action: "slot-wizard#moveToStep2" } %>
+      <%= repo.full_name %>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
