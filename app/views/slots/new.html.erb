@@ -2,7 +2,7 @@
   <h1>Open a slot</h1>
 
   <%= form_with model: @slot, data: { controller: "slot-wizard" } do |f| %>
-    <fieldset class="form-step card">
+    <fieldset class="slot-form-step">
       <legend>First, choose a GitHub repository</legend>
       <%= search_field_tag "repository", "", spellcheck: false, class: "form-field", data: {
                                                                   slot_wizard_target: "query",
@@ -12,12 +12,12 @@
       <%= render "available_repositories", repositories: available_repositories_for_slot(f.object), f: f %>
     </fieldset>
   
-    <fieldset id="slot-form-step2" class="form-step card">
+    <fieldset id="slot-slot-form-step2" class="slot-form-step">
       <legend>Then, choose an issue</legend>
       <%= render "available_issues", issues: [], f: f %>
     </fieldset>
   
-    <fieldset class="form-step card">
+    <fieldset class="slot-form-step">
       <legend>Finally, fill in the details of the slot</legend>
       <div>
         <%= f.label :start_at %>
@@ -30,7 +30,7 @@
       </div>
     </fieldset>
     
-    <fieldset class="form-step">
+    <fieldset class="slot-form-step">
       <%= f.submit %>
     </fieldset>
   <% end %>

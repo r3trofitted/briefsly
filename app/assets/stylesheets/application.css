@@ -13,3 +13,6 @@
 @import url("components/form_field.css");
 @import url("components/strikethrough.css");
 @import url("components/slot_filters.css");
+
+@import url("slots.css");
+
