@@ -1,37 +1,47 @@
 <main id="open-a-slot" class="resource container">
-  <h1>Open a slot</h1>
+  <h1 class="page-title">
+    <span>Open a slot</span>
+  </h1>
 
-  <%= form_with model: @slot, data: { controller: "slot-wizard" } do |f| %>
+  <%= form_with model: @slot, id: "slot-form", data: { controller: "slot-wizard" } do |f| %>
     <fieldset class="slot-form-step">
       <legend>First, choose a GitHub repository</legend>
-      <%= search_field_tag "repository", "", spellcheck: false, class: "form-field", data: {
-                                                                  slot_wizard_target: "query",
-                                                                  action: "keydown.enter->slot-wizard#searchRepositories:prevent"
-                                                                } %>
-      <%= button_tag "🔍", type: "button", class: "button", data: { action: "slot-wizard#searchRepositories" } %>
-      <%= render "available_repositories", repositories: available_repositories_for_slot(f.object), f: f %>
+      <div class="slot-form-step-main">
+        <div class="search-bar">
+          <%= search_field_tag "repository", "", spellcheck: false, placeholder: "Search GitHub", data: {
+                                                                      slot_wizard_target: "query",
+                                                                      action: "keydown.enter->slot-wizard#searchRepositories:prevent"
+                                                                    } %>
+          <%= button_tag type: "button", class: "search", data: { action: "slot-wizard#searchRepositories" } do %>
+            <span class="reverso">🔍</span>
+          <% end %>
+        </div>
+        <%= render "available_repositories", repositories: available_repositories_for_slot(f.object), f: f %>
+      </div>
     </fieldset>
   
     <fieldset id="slot-slot-form-step2" class="slot-form-step">
       <legend>Then, choose an issue</legend>
-      <%= render "available_issues", issues: [], f: f %>
+      <div class="slot-form-step-main">
+        <%= render "available_issues", issues: [], f: f %>
+      </div>
     </fieldset>
   
     <fieldset class="slot-form-step">
       <legend>Finally, fill in the details of the slot</legend>
-      <div>
-        <%= f.label :start_at %>
-        <%= f.datetime_local_field :start_at %>
+      <div class="slot-form-step-main">
+        <div>
+          <%= f.label :start_at %>
+          <%= f.datetime_local_field :start_at %>
+        </div>
+        
+        <div>
+          <%= f.label :end_at %>
+          <%= f.datetime_local_field :end_at %>
+        </div>
+
+        <%= f.submit %>
       </div>
-      
-      <div>
-        <%= f.label :end_at %>
-        <%= f.datetime_local_field :end_at %>
-      </div>
-    </fieldset>
-    
-    <fieldset class="slot-form-step">
-      <%= f.submit %>
-    </fieldset>
+    <fieldset>
   <% end %>
 </main>
