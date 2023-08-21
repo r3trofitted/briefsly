@@ -4,8 +4,8 @@
   </h1>
 
   <%= form_with model: @slot, id: "slot-form", data: { controller: "slot-wizard" } do |f| %>
-    <fieldset class="slot-form-step">
-      <legend>First, choose a GitHub repository</legend>
+    <fieldset class="slot-form-step wavy-section">
+      <legend class="wavy-section-title">First, choose a GitHub repository</legend>
       <div class="slot-form-step-main">
         <div class="search-bar">
           <%= search_field_tag "repository", "", spellcheck: false, placeholder: "Search GitHub", data: {
@@ -20,15 +20,15 @@
       </div>
     </fieldset>
   
-    <fieldset id="slot-form-step2" class="slot-form-step">
-      <legend>Then, choose an issue</legend>
+    <fieldset id="slot-form-step2" class="slot-form-step wavy-section">
+      <legend class="wavy-section-title">Then, choose an issue</legend>
       <div class="slot-form-step-main">
         <%= render "available_issues", issues: [], f: f %>
       </div>
     </fieldset>
   
-    <fieldset id="slot-form-step3" class="slot-form-step">
-      <legend>Finally, fill in the details of the slot</legend>
+    <fieldset id="slot-form-step3" class="slot-form-step wavy-section">
+      <legend class="wavy-section-title">Finally, fill in the details of the slot</legend>
       <div class="slot-form-step-main">
         <%= f.label :start_at, class: "slot-form-datepicker" %>
         <%= f.datetime_local_field :start_at, class: "text-input" %>

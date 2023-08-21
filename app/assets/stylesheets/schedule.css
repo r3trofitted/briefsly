@@ -1,0 +1,23 @@
+#my-schedule {
+  & section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+    gap: 1em;
+
+    padding-top: 0;
+  }
+  
+  & article.slot {
+    display: block;
+    height: 100%;
+    
+    background-color: var(--clr-neutral-100);
+    border-radius: .5rem;
+    border: solid 1px var(--_card-border-clr);
+    box-shadow: 0 0.125rem 0.375rem var(--_card-shadow-clr);
+  }
+  
+  & section h2 {
+    grid-column: 1 / -1;
+  }
+}
