@@ -1,7 +1,7 @@
 <%= tag.ul id: "available-issues", class: class_names("checkable-cards-list", { placeholder: issues.empty? }) do %>
-  <% 1.upto(issues.empty? ? 20 : issues.size) do |n| %>
+  <% 1.upto(issues.empty? ? 12 : issues.size) do |n| %>
     <li class="checkable-card">
-      <% if issue = issues[n] %>
+      <% if issue = issues[n - 1] %>
         <%= f.label :issue_number, value: issue.number do %>
           <%= f.radio_button :issue_number, issue.number, data: { action: "slot-wizard#moveToStep3" } %>
           <%= issue.title %>

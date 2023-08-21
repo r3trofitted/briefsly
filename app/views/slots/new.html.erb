@@ -20,28 +20,24 @@
       </div>
     </fieldset>
   
-    <fieldset id="slot-slot-form-step2" class="slot-form-step">
+    <fieldset id="slot-form-step2" class="slot-form-step">
       <legend>Then, choose an issue</legend>
       <div class="slot-form-step-main">
         <%= render "available_issues", issues: [], f: f %>
       </div>
     </fieldset>
   
-    <fieldset class="slot-form-step">
+    <fieldset id="slot-form-step3" class="slot-form-step">
       <legend>Finally, fill in the details of the slot</legend>
       <div class="slot-form-step-main">
-        <div>
-          <%= f.label :start_at %>
-          <%= f.datetime_local_field :start_at %>
-        </div>
+        <%= f.label :start_at, class: "slot-form-datepicker" %>
+        <%= f.datetime_local_field :start_at, class: "text-input" %>
         
-        <div>
-          <%= f.label :end_at %>
-          <%= f.datetime_local_field :end_at %>
-        </div>
+        <%= f.label :end_at, class: "slot-form-datepicker" %>
+        <%= f.datetime_local_field :end_at, class: "text-input" %>
 
-        <%= f.submit %>
+        <%= f.submit class: "submit-button" %>
       </div>
-    <fieldset>
+    </fieldset>
   <% end %>
 </main>

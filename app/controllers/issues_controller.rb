@@ -1,7 +1,7 @@
 class IssuesController < ApplicationController
 
   def index
-    @issues = github_client.issues(repository_name, sort: { updated: :desc })
+    @issues = github_client.issues(repository_name, sort: { updated: :desc }, per_page: 12)
     
     respond_to do |format|
       format.html

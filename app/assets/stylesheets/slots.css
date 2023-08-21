@@ -30,6 +30,7 @@ body {
   --clr-tertiary-700: hsl(315, 79%, 42%);
   --clr-tertiary-900: hsl(315, 79%, 20%);
 
+  --ff-body: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
   --ff-heading: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
   
   --fs-500: 1.333rem;
@@ -38,6 +39,8 @@ body {
   --fs-800: 3rem;
   
   background-color: var(--clr-neutral-200);
+  
+  font-family: var(--ff-body);
 }
 
 #open-a-slot {
@@ -88,19 +91,34 @@ body {
   }
 }
 
+input:is(.text-input, .submit-button) {
+  padding: 0.25em;
+  
+  border: 2px solid var(--clr-secondary-700);
+  border-radius: 1em / 50%;
+  
+  background-color: var(--clr-neutral-100);
+}
+
+label:has(+ .text-input) {
+  color: var(--clr-neutral-200);
+  font-weight: 500;
+}
+
 input[type='submit'].submit-button {
   margin-block: 1em;
-  padding: .825em .5em .5em; /* room for the rounded border + extra padding on top to offset the font's baseline */
+  padding: .65em .5em .25em; /* insert room for the rounded border + extra padding on top to offset the font's baseline */
+  
+  height: min-content;
+  width: min-content;
   
   color: var(--clr-secondary-700);
   font-family: var(--ff-heading);
   
-  background-color: var(--clr-primary-100);
-  border: 3px solid var(--clr-secondary-700);
-  border-radius: 10% / 50%;
+  border-width: 3px;
   
   &:hover {
-    background-color: var(--clr-secondary-400);
+    background-color: var(--clr-primary-100);
   }
 }
 
@@ -129,7 +147,7 @@ h1.page-title {
   padding: .25em; /* leaving room for the rounded borders */
   
   border: 3px solid var(--clr-secondary-700);
-  border-radius: 10% / 50%;
+  border-radius: 1em / 50%;
   background: var(--clr-neutral-100);
   
   font-size: var(--fs-800);
@@ -180,7 +198,6 @@ h1.page-title {
 #slot-form {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr auto;
   
   align-items: stretch;
 }
@@ -193,7 +210,7 @@ h1.page-title {
   --_card-checked-bg-clr: var(--clr-primary-100);
   
   position: relative;
-  padding: calc(40px + 1em) 1em;
+  padding: 1em 1em 0;
   
   background-color: var(--_step-bg-clr, var(--_step-default-bg-clr));
   
@@ -221,10 +238,16 @@ h1.page-title {
     --_card-checked-bg-clr: var(--clr-secondary-400);
 
     --wave-factor: 15%;
+    
+    padding-top: calc(40px + 1em); /* extra space for the waves on top */
+  }
+  
+  &:nth-of-type(2n + 1):not(:last-of-type) {
+    padding-bottom: calc(40px + 1em); /* extra space for the waves on bottom */
   }
   
   &:nth-of-type(2n + 1)::before, 
-  &:nth-of-type(2n + 1)::after {
+  &:nth-of-type(2n + 1):not(:last-of-type)::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -243,7 +266,7 @@ h1.page-title {
     mask-size: calc(100% + var(--wave-factor));
   }
   
-  &:nth-of-type(2n + 1)::after {
+  &:nth-of-type(2n + 1):not(:last-of-type)::after {
     bottom: 0;
     
     -webkit-mask-size: calc(90% + (1.5 * var(--wave-factor)));
@@ -269,7 +292,6 @@ h1.page-title {
 .slot-form-step-main {
   clear: both;
   padding-top: 1em;
-  height: 100%;
   
   /* Laying a shape over the list when it is a placeholder */ 
   &:has(ul.checkable-cards-list.placeholder) {
@@ -288,14 +310,30 @@ h1.page-title {
   }
 }
 
+#slot-form-step2 .checkable-cards-list {
+  grid-template-columns: repeat(auto-fit, minmax(35ch, 1fr));
+}
+
 #slot-form-step3 {
-  /* TODO */
+  .slot-form-step-main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+    justify-content: left;
+    place-items: center start;
+  }
+  
+  .submit-button {
+    grid-column: 1 / -1;
+    justify-self: center;
+    padding-inline: 3em;
+  }
 }
 
 .checkable-cards-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
-  grid-auto-rows: 4em; /* OPTIMIZE: use auto and let the card set its height? */
+  grid-auto-rows: minmax(4em, 1fr);
   gap: 1em;
   
   padding: 0;
@@ -346,6 +384,8 @@ h1.page-title {
   border: unset;
   box-shadow: unset;
   overflow: unset;
+  
+  background-color: #fff; /* to increase the contrast with the overlayed shape */
   
   &::after {
     content: '';
