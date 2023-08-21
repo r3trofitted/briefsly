@@ -32,9 +32,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_30_141748) do
     t.integer "issue_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.time "start_at", null: false
-    t.time "end_at", null: false
-    t.date "date", null: false
+    t.datetime "end_at"
+    t.datetime "start_at"
     t.index ["user_id"], name: "index_slots_on_user_id"
   end
 
