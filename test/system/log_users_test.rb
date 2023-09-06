@@ -12,7 +12,7 @@ class LogUsersTest < ApplicationSystemTestCase
 
     OmniAuth.config.add_mock(:github, **auth_data)
 
-    visit sessions_new_path
+    visit new_session_path
 
     click_button "Login with GitHub"
 
