@@ -1,8 +1,11 @@
 /* TODO: make these temporary fixes unnecessary */
-#open-a-slot,
-#my-schedule {
+#open-a-slot {
   max-width: unset;
   padding-inline: 0;
+}
+
+#open-a-slot {
+  --wavy-section-color: var(--clr-secondary-100);
 }
 
 #slot-form {

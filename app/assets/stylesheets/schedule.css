@@ -1,4 +1,12 @@
+/* TODO: make these temporary fixes unnecessary */
 #my-schedule {
+  max-width: unset;
+  padding-inline: 0;
+}
+
+#my-schedule {
+  --wavy-section-color: var(--clr-tertiary-400);
+  
   & section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
